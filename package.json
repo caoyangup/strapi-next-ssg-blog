@@ -8,6 +8,7 @@
   "type": "module",
   "main": "index.js",
   "scripts": {
+    "postinstall": "cd strapi && npm install && cd ../next && npm install",
     "backup": "node scripts/backup-db.js",
     "dev": "concurrently -n strapi,next,sync,backup -c blue,green,yellow,magenta \"cd strapi && npm run dev\" \"cd next && npm run dev\" \"chokidar './strapi/public/uploads/**' -c 'rsync -av --delete ./strapi/public/uploads/ ./next/public/uploads/' --initial\" \"npm run backup\"",
     "build": "concurrently -n strapi,sync,build -c blue,yellow,green --kill-others --success command-2 \"cd strapi && npm run dev\" \"chokidar './strapi/public/uploads/**' -c 'rsync -av --delete ./strapi/public/uploads/ ./next/public/uploads/' --initial\" \"sleep 8 && rm -rf ./next/.next && cd next && npm run build\" && npx serve ./next/out",

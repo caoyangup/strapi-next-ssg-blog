@@ -45,15 +45,11 @@ cd strapi-next-ssg-blog
 ### 2. Install dependencies
 
 ```bash
-# Install root dependencies
+# Install all dependencies (root, strapi, next, and plugins)
 npm install
-
-# Install Strapi dependencies
-cd strapi && npm install && cd ..
-
-# Install Next.js dependencies
-cd next && npm install && cd ..
 ```
+
+> **Note**: The `postinstall` script will automatically install dependencies for Strapi, Next.js, and local Strapi plugins.
 
 ### 3. Configure environment variables
 

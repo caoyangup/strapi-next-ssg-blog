@@ -5,6 +5,7 @@
   "private": true,
   "description": "A Strapi application",
   "scripts": {
+    "postinstall": "cd src/plugins/pinyin-slug && npm install && npm run build",
     "build": "strapi build",
     "console": "strapi console",
     "deploy": "strapi deploy",
