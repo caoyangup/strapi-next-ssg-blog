@@ -1,0 +1,19 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"type": "npm",
+			"script": "deploy",
+			"problemMatcher": [],
+			"label": "npm: deploy",
+			"detail": "npm run build && wrangler pages deploy ./next/out"
+		},
+		{
+			"type": "npm",
+			"script": "dev",
+			"problemMatcher": [],
+			"label": "npm: dev",
+			"detail": "concurrently -n strapi,next,sync,backup -c blue,green,yellow,magenta \"cd strapi && npm run dev\" \"cd next && npm run dev\" \"chokidar './strapi/public/uploads/**' -c 'rsync -av --delete ./strapi/public/uploads/ ./next/public/uploads/' --initial\" \"npm run backup\""
+		}
+	]
+}

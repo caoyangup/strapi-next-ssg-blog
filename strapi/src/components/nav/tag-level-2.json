@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_nav_tag_level_2s",
+  "info": {
+    "displayName": "tag level 2"
+  },
+  "options": {},
+  "attributes": {
+    "children": {
+      "type": "component",
+      "component": "nav.tag-level-3",
+      "repeatable": true
+    },
+    "adminName": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}

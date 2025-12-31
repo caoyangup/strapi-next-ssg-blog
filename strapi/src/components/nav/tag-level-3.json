@@ -1,0 +1,13 @@
+{
+  "collectionName": "components_nav_tag_level_3s",
+  "info": {
+    "displayName": "tag level 3"
+  },
+  "options": {},
+  "attributes": {
+    "adminName": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
