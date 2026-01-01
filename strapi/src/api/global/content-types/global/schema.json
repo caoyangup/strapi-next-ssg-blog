@@ -1,0 +1,149 @@
+{
+  "kind": "singleType",
+  "collectionName": "globals",
+  "info": {
+    "singularName": "global",
+    "pluralName": "globals",
+    "displayName": "global"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "navbar": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "layout.navbar",
+      "repeatable": false
+    },
+    "footer": {
+      "type": "component",
+      "pluginOptions": {
+        "i18n": {
+          "localized": true
+        }
+      },
+      "component": "layout.footer",
+      "repeatable": false
+    },
+    "metadataNextLayout": {
+      "type": "json",
+      "description": "Next.js layout metadata, see https://nextjs.org/docs/app/api-reference/functions/generate-metadata",
+      "default": {
+        "title": {
+          "template": "%s | Acme",
+          "default": "Acme"
+        },
+        "description": "A blog demo using Strapi as headless CMS and Next.js as frontend with static site generation (SSG)",
+        "generator": "Next.js",
+        "applicationName": "Next.js",
+        "referrer": "origin-when-cross-origin",
+        "keywords": [
+          "Next.js",
+          "React",
+          "JavaScript"
+        ],
+        "authors": [
+          {
+            "name": "Seb"
+          },
+          {
+            "name": "Josh",
+            "url": "https://nextjs.org"
+          }
+        ],
+        "creator": "Jiachi Liu",
+        "publisher": "Sebastian Markbåge",
+        "formatDetection": {
+          "email": false,
+          "address": false,
+          "telephone": false
+        },
+        "metadataBase": "https://acme.com",
+        "alternates": {
+          "canonical": "/",
+          "languages": {
+            "en-US": "/en-US",
+            "de-DE": "/de-DE"
+          }
+        },
+        "openGraph": {
+          "title": "Next.js",
+          "description": "The React Framework for the Web",
+          "url": "https://nextjs.org",
+          "siteName": "Next.js",
+          "images": [
+            {
+              "url": "https://nextjs.org/og.png",
+              "width": 800,
+              "height": 600
+            },
+            {
+              "url": "https://nextjs.org/og-alt.png",
+              "width": 1800,
+              "height": 1600,
+              "alt": "My custom alt"
+            }
+          ],
+          "videos": [
+            {
+              "url": "https://nextjs.org/video.mp4",
+              "width": 800,
+              "height": 600
+            }
+          ],
+          "audio": [
+            {
+              "url": "https://nextjs.org/audio.mp3"
+            }
+          ],
+          "locale": "en_US",
+          "type": "website"
+        },
+        "twitter": {
+          "card": "app",
+          "title": "Next.js",
+          "description": "The React Framework for the Web",
+          "siteId": "1467726470533754880",
+          "creator": "@nextjs",
+          "creatorId": "1467726470533754880",
+          "images": {
+            "url": "https: //nextjs.org/og.png",
+            "alt": "Next.js Logo"
+          },
+          "app": {
+            "name": "twitter_app",
+            "id": {
+              "iphone": "twitter_app: //iphone",
+              "ipad": "twitter_app: //ipad",
+              "googleplay": "twitter_app: //googleplay"
+            },
+            "url": {
+              "iphone": "https: //iphone_url",
+              "ipad": "https: //ipad_url"
+            }
+          }
+        },
+        "verification": {
+          "google": "google",
+          "yandex": "yandex",
+          "yahoo": "yahoo",
+          "other": {
+            "me": [
+              "my-email",
+              "my-link"
+            ]
+          }
+        },
+        "other": {
+          "custom": "meta"
+        }
+      }
+    }
+  }
+}

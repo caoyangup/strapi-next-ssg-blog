@@ -1,0 +1,197 @@
+.gsc-left-header em {
+  display: none !important;
+}
+
+.gsc-left-header a {
+  pointer-events: none !important;
+  /* color: #999 !important; */
+  /* 改变颜色表示禁用 */
+  text-decoration: none !important;
+  cursor: default !important;
+}
+
+:root {
+  --header-height: 3rem;
+  --radius: 0.625rem;
+  --background: #0a0a0a;
+  --foreground: #8c8f95;
+  --card: #171717;
+  --card-foreground: #fafafa;
+  --popover: #171717;
+  --popover-foreground: #fafafa;
+  --primary: #35cc86;
+  --primary-foreground: #e5e5e5;
+  --secondary: #262626;
+  --secondary-foreground: #fafafa;
+  --muted: #3f3f3f;
+  --muted-foreground: #a1a1a1;
+  --accent: #262626;
+  --accent-foreground: #fafafa;
+  --destructive: #ff6467;
+  --border: rgb(255 255 255 / 10%);
+  --input: rgb(255 255 255 / 15%);
+  --ring: #737373;
+  --chart-1: #1447e6;
+  --chart-2: #00bc7d;
+  --chart-3: #fe9a00;
+  --chart-4: #ad46ff;
+  --chart-5: #ff2056;
+  --sidebar: #171717;
+  --sidebar-foreground: #fafafa;
+  --sidebar-primary: #1447e6;
+  --sidebar-primary-foreground: #fafafa;
+  --sidebar-accent: #262626;
+  --sidebar-accent-foreground: #fafafa;
+  --sidebar-border: #ffffff1a;
+  --sidebar-ring: #737373;
+}
+
+/*! MIT License
+ * Copyright (c) 2018 GitHub Inc.
+ * https://github.com/primer/primitives/blob/main/LICENSE
+ */
+
+/* 
+ * --------------------------------------------------------------------------
+ * 下方的 GitHub 主题颜色已适配您提供的 :root 变量。
+ * - 优先进行语义化匹配 (例如: 默认背景色 -> --background)。
+ * - 对于没有直接语义对应的颜色，保留了原始值以维持视觉一致性。
+ * - 语法高亮颜色保持不变。
+ * --------------------------------------------------------------------------
+ */
+
+main {
+  /* ========================================================================== */
+  /* 语法高亮颜色 (保持不变) */
+  /* ========================================================================== */
+  --color-prettylights-syntax-comment: #768390;
+  --color-prettylights-syntax-constant: #6cb6ff;
+  --color-prettylights-syntax-entity: #dcbdfb;
+  --color-prettylights-syntax-storage-modifier-import: #adbac7;
+  --color-prettylights-syntax-entity-tag: #8ddb8c;
+  --color-prettylights-syntax-keyword: #f47067;
+  --color-prettylights-syntax-string: #96d0ff;
+  --color-prettylights-syntax-variable: #f69d50;
+  --color-prettylights-syntax-brackethighlighter-unmatched: #e5534b;
+  --color-prettylights-syntax-invalid-illegal-text: #cdd9e5;
+  --color-prettylights-syntax-invalid-illegal-bg: #922323;
+  --color-prettylights-syntax-carriage-return-text: #cdd9e5;
+  --color-prettylights-syntax-carriage-return-bg: #ad2e2c;
+  --color-prettylights-syntax-string-regexp: #8ddb8c;
+  --color-prettylights-syntax-markup-list: #eac55f;
+  --color-prettylights-syntax-markup-heading: #316dca;
+  --color-prettylights-syntax-markup-italic: #adbac7;
+  --color-prettylights-syntax-markup-bold: #adbac7;
+  --color-prettylights-syntax-markup-deleted-text: #ffd8d3;
+  --color-prettylights-syntax-markup-deleted-bg: #78191b;
+  --color-prettylights-syntax-markup-inserted-text: #b4f1b4;
+  --color-prettylights-syntax-markup-inserted-bg: #1b4721;
+  --color-prettylights-syntax-markup-changed-text: #ffddb0;
+  --color-prettylights-syntax-markup-changed-bg: #682d0f;
+  --color-prettylights-syntax-markup-ignored-text: #adbac7;
+  --color-prettylights-syntax-markup-ignored-bg: #255ab2;
+  --color-prettylights-syntax-meta-diff-range: #dcbdfb;
+  --color-prettylights-syntax-brackethighlighter-angle: #768390;
+  --color-prettylights-syntax-sublimelinter-gutter-mark: #545d68;
+  --color-prettylights-syntax-constant-other-reference-link: #96d0ff;
+
+  /* ========================================================================== */
+  /* UI 组件颜色 (适配新变量) */
+  /* ========================================================================== */
+
+  /* --- 按钮 --- */
+  --color-btn-text: var(--secondary-foreground);
+  --color-btn-bg: var(--secondary);
+  --color-btn-border: var(--border);
+  --color-btn-shadow: 0 0 transparent;
+  --color-btn-inset-shadow: 0 0 transparent;
+  --color-btn-hover-bg: var(--muted);
+  /* 使用柔和色调作为悬浮背景 */
+  --color-btn-hover-border: var(--border);
+  /* 使用轮廓环色作为悬浮边框 */
+  --color-btn-active-bg: var(--secondary);
+  --color-btn-active-border: var(--border);
+  --color-btn-selected-bg: var(--secondary);
+
+  /* --- 主要按钮 --- */
+  --color-btn-primary-text: var(--primary-foreground);
+  --color-btn-primary-bg: var(--primary);
+  --color-btn-primary-border: var(--border);
+  --color-btn-primary-shadow: 0 0 transparent;
+  --color-btn-primary-inset-shadow: 0 0 transparent;
+  /* (无对应) 主题未提供 primary-hover 状态，保留原值 */
+  --color-btn-primary-hover-bg: color-mix(in srgb, var(--primary) 90%, #000000);
+  ;
+  --color-btn-primary-hover-border: var(--border);
+  --color-btn-primary-selected-bg: var(--primary);
+  --color-btn-primary-selected-shadow: 0 0 transparent;
+  /* (无对应) 主题未提供 disabled 状态，保留原值 */
+  --color-btn-primary-disabled-text: rgb(205 217 229 / 50%);
+  --color-btn-primary-disabled-bg: color-mix(in srgb, var(--primary) 50%, #000000);
+  --color-btn-primary-disabled-border: var(--border);
+
+  /* --- 其他组件 --- */
+  --color-action-list-item-default-hover-bg: rgb(144 157 171 / 12%);
+  --color-segmented-control-bg: var(--secondary);
+  --color-segmented-control-button-bg: var(--background);
+  --color-segmented-control-button-selected-border: var(--border);
+
+  /* --- 前景色/文本色 --- */
+  --color-fg-default: var(--primary-foreground);
+  --color-fg-muted: var(--muted-foreground);
+  --color-fg-subtle: var(--border);
+  /* 使用轮廓环色作为更柔和的文本色 */
+
+  /* --- 背景色 --- */
+  --color-canvas-default: var(--background);
+  --color-canvas-overlay: var(--popover);
+  --color-canvas-inset: #030303;
+  /* 使用比 background 更深的颜色 */
+  --color-canvas-subtle: var(--card);
+
+  /* --- 边框色 --- */
+  --color-border-default: var(--border);
+  --color-border-muted: var(--secondary);
+
+  /* --- 状态色 --- */
+  --color-neutral-muted: var(--muted);
+  --color-accent-fg: var(--primary);
+  /* 使用图表色1(紫色)作为强调色 */
+  --color-accent-emphasis: var(--primary);
+  /* (无对应) 保留原值 */
+  --color-accent-muted: color-mix(in srgb, var(--primary), transparent 60%);
+  /* 尝试混合生成半透明版本 */
+  --color-accent-subtle: color-mix(in srgb, var(--primary), transparent 90%);
+  /* 尝试混合生成半透明版本 */
+  --color-success-fg: var(--primary);
+  /* 使用主要色调作为成功色 */
+  --color-attention-fg: var(--chart-3);
+  /* 使用图表色3(黄色)作为注意色 */
+  --color-attention-muted: rgb(174 124 20 / 40%);
+  /* (无对应) 保留原值 */
+  --color-attention-subtle: rgb(174 124 20 / 15%);
+  /* (无对应) 保留原值 */
+  --color-danger-fg: var(--destructive);
+  --color-danger-muted: color-mix(in srgb, var(--destructive), transparent 60%);
+  /* 尝试混合生成半透明版本 */
+  --color-danger-subtle: color-mix(in srgb, var(--destructive), transparent 90%);
+  /* 尝试混合生成半透明版本 */
+
+  /* --- 阴影 & 其他 --- */
+  --color-primer-shadow-inset: 0 0 transparent;
+  --color-scale-gray-7: var(--secondary);
+  --color-scale-blue-8: var(--accent);
+  /* (无对应) 保留原值 */
+
+  /*! Extensions from @primer/css/alerts/flash.scss */
+  --color-social-reaction-bg-hover: var(--color-scale-gray-7);
+  --color-social-reaction-bg-reacted-hover: var(--color-scale-blue-8);
+}
+
+main .pagination-loader-container {
+  background-image: url("https://github.com/images/modules/pulls/progressive-disclosure-line-dark.svg");
+}
+
+main .gsc-loading-image {
+  background-image: url("https://github.githubassets.com/images/mona-loading-dimmed.gif");
+}

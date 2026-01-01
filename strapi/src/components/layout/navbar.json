@@ -1,0 +1,39 @@
+{
+  "collectionName": "components_layout_navbars",
+  "info": {
+    "displayName": "Navbar",
+    "icon": "bold"
+  },
+  "options": {},
+  "attributes": {
+    "logo": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "logoDark": {
+      "type": "media",
+      "multiple": false,
+      "required": true,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "logoText": {
+      "type": "string"
+    },
+    "nav": {
+      "type": "component",
+      "component": "nav.item",
+      "repeatable": true
+    },
+    "navMobile": {
+      "type": "component",
+      "component": "nav.item",
+      "repeatable": true
+    }
+  }
+}

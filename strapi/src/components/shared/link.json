@@ -1,0 +1,61 @@
+{
+  "collectionName": "components_shared_links",
+  "info": {
+    "displayName": "Link",
+    "icon": "link"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    },
+    "target": {
+      "type": "enumeration",
+      "enum": [
+        "_blank",
+        "_self",
+        "_parent",
+        "_top"
+      ]
+    },
+    "replace": {
+      "type": "boolean",
+      "default": false
+    },
+    "scroll": {
+      "type": "boolean",
+      "default": true
+    },
+    "prefetch": {
+      "type": "boolean"
+    },
+    "variant": {
+      "type": "enumeration",
+      "default": "link",
+      "enum": [
+        "default",
+        "destructive",
+        "outline",
+        "secondary",
+        "ghost",
+        "link"
+      ]
+    },
+    "size": {
+      "type": "enumeration",
+      "default": "default",
+      "enum": [
+        "default",
+        "sm",
+        "lg",
+        "icon"
+      ]
+    },
+    "asChild": {
+      "type": "boolean"
+    }
+  }
+}

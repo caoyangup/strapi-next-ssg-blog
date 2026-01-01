@@ -1,0 +1,19 @@
+{
+  "collectionName": "components_nav_item_level_2s",
+  "info": {
+    "displayName": "Item level 2"
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "string"
+    },
+    "desc": {
+      "type": "string"
+    },
+    "href": {
+      "type": "string"
+    }
+  },
+  "config": {}
+}
