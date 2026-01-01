@@ -21,6 +21,7 @@ strapi-next-ssg-blog/
 │   └── ...
 ├── scripts/                # Utility scripts
 │   └── backup-db.js        # Database backup script
+├── example.env             # Environment variables template (backup config)
 └── package.json            # Root package with workspace scripts
 ```
 
@@ -55,6 +56,12 @@ strapi-next-ssg-blog/
    This will automatically install dependencies for both Strapi and Next.js.
 
 3. **Configure environment variables**:
+
+   **Root** (`.env` - for database backup):
+   ```bash
+   cp example.env .env
+   ```
+   Edit `.env` and set `BACKUP_TARGET_DIR` to enable automatic database backup. If not configured, backup will be skipped.
 
    **Strapi** (`strapi/.env`):
    ```bash
@@ -112,6 +119,15 @@ strapi-next-ssg-blog/
 | `STRAPI_API_TOKEN` | API token for Strapi access |
 | `NEXT_PUBLIC_STRAPI_SYNC_UPLOADS` | Enable upload sync |
 | `IMAGE_HOSTNAME` | Allowed image hostname |
+
+### Backup Environment Variables (Root `.env`)
+
+| Variable | Description |
+|----------|-------------|
+| `BACKUP_TARGET_DIR` | **Required** - Backup destination directory |
+| `BACKUP_SOURCE_FILE` | Source database file (default: `./strapi/database/data.db`) |
+| `BACKUP_RETENTION_DAYS` | Days to keep backups (default: `2`) |
+| `BACKUP_POLL_INTERVAL` | Check interval in ms (default: `30000`) |
 
 ## 🌐 Deployment
 

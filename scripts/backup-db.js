@@ -28,8 +28,8 @@ const config = {
     // 要监控的源文件（数据库文件）
     sourceFile: process.env.BACKUP_SOURCE_FILE || './strapi/database/data.db',
 
-    // 备份目标目录
-    targetDir: process.env.BACKUP_TARGET_DIR || '/Users/yang/Library/Mobile Documents/com~apple~CloudDocs/Blog/database',
+    // 备份目标目录（必须配置，否则不执行备份）
+    targetDir: process.env.BACKUP_TARGET_DIR || '',
 
     // 保留天数
     retentionDays: parseInt(process.env.BACKUP_RETENTION_DAYS || '2', 10),
@@ -192,6 +192,20 @@ function getFileMtime(filePath) {
 // ============ 主程序 ============
 
 async function main() {
+    // 检查是否配置了备份目标目录
+    if (!config.targetDir) {
+        console.log('');
+        console.log('╔═══════════════════════════════════════════════════╗');
+        console.log('║         📦 数据库备份服务 - 未启用                ║');
+        console.log('╠═══════════════════════════════════════════════════╣');
+        console.log('║ ⚠️  未配置 BACKUP_TARGET_DIR 环境变量              ║');
+        console.log('║ 请在根目录 .env 文件中配置备份目标目录            ║');
+        console.log('║ 参考 example.env 文件进行配置                     ║');
+        console.log('╚═══════════════════════════════════════════════════╝');
+        console.log('');
+        return;
+    }
+
     const sourcePath = path.resolve(config.sourceFile);
 
     console.log('');
