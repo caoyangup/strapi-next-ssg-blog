@@ -21,6 +21,14 @@
 
 import fs from 'fs';
 import path from 'path';
+import { fileURLToPath } from 'url';
+import dotenv from 'dotenv';
+
+// 获取当前文件所在目录，然后定位到项目根目录的 .env 文件
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+const rootDir = path.resolve(__dirname, '..');
+dotenv.config({ path: path.join(rootDir, '.env') });
 import { spawn } from 'child_process';
 
 // ============ 配置 ============
