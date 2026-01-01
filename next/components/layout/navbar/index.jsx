@@ -74,7 +74,7 @@ export function Navbar({ data, locale }) {
                                 {item.subItems.map((subItem) => (
                                   <li key={subItem.text}>
                                     <NavigationMenuLink asChild className={cn('p-3')}>
-                                      <Link href={subItem.href}>
+                                      <Link href={subItem.href || '#'}>
                                         <span className="font-medium">{subItem.text}</span>
                                         <span className="text-foreground text-xs">
                                           {subItem.desc}
@@ -88,7 +88,7 @@ export function Navbar({ data, locale }) {
                           </>
                           :
                           <NavigationMenuLink asChild className={cn(navigationMenuTriggerStyle(), 'bg-transparent hover:bg-transparent focus:bg-transparent data-[state=open]:hover:bg-transparent data-[state=open]:focus:bg-transparent data-[state=open]:bg-transparent/50')}>
-                            <Link href={item.href}>{item.text || 'null'}</Link>
+                            <Link href={item.href || '#'}>{item.text || 'null'}</Link>
                           </NavigationMenuLink>
                       }
                     </NavigationMenuItem>
