@@ -7,13 +7,23 @@ import { Pagination } from "@/components/article/pagination";
 
 export default async function Page({ params = {} }) {
     const { page = 1 } = await params;
-    const blog = apiClient.single('blog');
-    const blogData = await blog.find({
-        populate: [
-            'topArticles.tags',
-            // 'tags',
-        ],
-    });
+
+    // 获取 blog 单类型数据，添加错误处理
+    // 当 blog 内容不存在或未发布时，API 会返回 404，使用默认空数据
+    let blogData = { data: { topArticles: [] } };
+    try {
+        const blog = apiClient.single('blog');
+        blogData = await blog.find({
+            populate: [
+                'topArticles.tags',
+                // 'tags',
+            ],
+        });
+    } catch (error) {
+        console.warn('Failed to fetch blog data:', error.message);
+        // 使用默认空数据
+    }
+
     const article = apiClient.collection('articles');
     const articleData = await article.find({
         filters: {
@@ -45,7 +55,7 @@ export default async function Page({ params = {} }) {
     });
     const { pagination } = articleData.meta;
     const totalPages = Math.ceil(pagination.total / pagination.pageSize);
-    const { topArticles } = blogData.data;
+    const topArticles = blogData?.data?.topArticles || [];
     return (
         <main>
             <div className="wrapper pt-[61px] pb-16">
@@ -74,7 +84,7 @@ export default async function Page({ params = {} }) {
                     ))}
                 </div> */}
                 <ul role="list" className="mt-16 divide-y border-y">
-                    {page == 1 && topArticles.map((article) => (
+                    {page == 1 && topArticles?.length > 0 && topArticles.map((article) => (
                         <ListItem data={article} key={article.documentId} isTop />
                     ))}
                     {articleData.data
