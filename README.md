@@ -1,5 +1,7 @@
 # Strapi + Next.js SSG Blog
 
+English | [中文](./README.zh-CN.md)
+
 A full-stack blog solution using **Strapi** as the headless CMS and **Next.js** with Static Site Generation (SSG) for the frontend. Deploy your static site to **Cloudflare Pages** for blazing-fast performance.
 
 ## 🏗️ Project Structure
@@ -11,6 +13,7 @@ strapi-next-ssg-blog/
 │   │   ├── api/            # Content-types (article, blog, global)
 │   │   ├── components/     # Shared components (layout, nav, shared)
 │   │   └── plugins/        # Local plugins (pinyin-slug)
+│   ├── public/uploads/     # Uploaded images (auto-synced to Git)
 │   ├── example.env         # Environment variables template
 │   └── ...
 ├── next/                   # Next.js frontend
@@ -29,10 +32,33 @@ strapi-next-ssg-blog/
 
 - **Strapi CMS**: Headless CMS with custom content-types for articles, categories, and tags
 - **Next.js SSG**: Static site generation for optimal performance
+- **Full-text Search**: Built-in article search functionality
 - **Pinyin Slug Plugin**: Auto-generate URL-friendly slugs from Chinese titles
 - **Draft Preview**: Preview draft articles before publishing
 - **SEO Optimized**: Built-in SEO components and metadata management
 - **Cloudflare Pages**: One-command deployment to Cloudflare
+
+## 💡 Recommended Usage
+
+### Option 1: Fork + GitHub Storage (Recommended)
+
+The simplest approach for personal blogs:
+
+1. **Fork this repository** to your GitHub account
+2. **Clone locally** for development
+3. **Image storage**: Uploaded images are saved in `strapi/public/uploads/` and committed to GitHub with your code
+4. **Database backup**:
+   - Manually backup `strapi/database/data.db` file
+   - Or configure `BACKUP_TARGET_DIR` in `.env` for automatic backup on changes
+5. **Deploy frontend**: Run `npm run deploy` to deploy static pages to Cloudflare Pages
+
+### Option 2: Separate Frontend/Backend Deployment
+
+For higher availability requirements:
+
+1. Deploy Strapi to a cloud server (AWS, DigitalOcean, etc.)
+2. Run only Next.js frontend locally, connecting to remote Strapi API
+3. Run `npm run build` to generate static pages and deploy
 
 ## 🚀 Getting Started
 
@@ -43,9 +69,10 @@ strapi-next-ssg-blog/
 
 ### Installation
 
-1. **Clone the repository**:
+1. **Fork and clone the repository**:
    ```bash
-   git clone https://github.com/caoyangup/strapi-next-ssg-blog.git
+   # First fork this project on GitHub, then clone your fork
+   git clone https://github.com/YOUR_USERNAME/strapi-next-ssg-blog.git
    cd strapi-next-ssg-blog
    ```
 
@@ -57,7 +84,7 @@ strapi-next-ssg-blog/
 
 3. **Configure environment variables**:
 
-   **Root** (`.env` - for database backup):
+   **Root** (`.env` - for database backup, optional):
    ```bash
    cp example.env .env
    ```
